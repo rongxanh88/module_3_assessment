@@ -6,10 +6,10 @@ RSpec.describe "Items API", :type => :request do
     create(:item, name: 'Firebolt')
     create(:item, name: 'Thunder')
 
-    get '/api/v1/items'
+    get '/api/v1/items.json'
 
-    result = JSON.parse(repsponse.body)
-
+    result = JSON.parse(response.body)
+    binding.pry
     expect(response).to have_http_status(200)
   end
 end
