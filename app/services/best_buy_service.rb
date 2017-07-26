@@ -1,7 +1,7 @@
 class BestBuyService
   def initialize(zip_code)
     @zip_code = zip_code
-    @connection = Faraday.new(url: "https://api.bestbuy.com/v1")
+    @connection = Faraday.new(:url => "https://api.bestbuy.com/v1")
 
   end
 
