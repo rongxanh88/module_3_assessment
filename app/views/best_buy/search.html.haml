@@ -1,0 +1,14 @@
+%p 
+  = @presenter.total_stores
+
+- @presenter.stores.each do |store|
+  %p 
+    = "Long Name: #{store.long_name}"
+  %p 
+    = "City: #{store.city}"
+  %p 
+    = "Distance: #{store.distance}"
+  %p 
+    = "Phone Number: #{store.phone}"
+  %p 
+    = "Store Type: #{store.store_type}"
