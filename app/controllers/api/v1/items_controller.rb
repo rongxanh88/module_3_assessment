@@ -10,10 +10,17 @@ class Api::V1::ItemsController <  ActionController::Base
   end
 
   def create
-
+    @item = Item.create(item_params)
+    render :show, :status => 204
   end
 
   def destroy
 
   end
+
+  private
+
+    def item_params
+      params.require(:item).permit(:name, :description, :image_url)
+    end
 end
