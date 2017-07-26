@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'best_buy#index'
+  root 'best_buy#home'
+  get '/search', to: 'best_buy#search'
 
   resources :items,  only: [:index, :show]
   resources :orders, only: [:index, :show]
