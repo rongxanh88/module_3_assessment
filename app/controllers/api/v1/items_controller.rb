@@ -11,7 +11,6 @@ class Api::V1::ItemsController <  ActionController::Base
 
   def create
     @item = Item.create(item_params)
-    render :show, :status => 204
   end
 
   def destroy
