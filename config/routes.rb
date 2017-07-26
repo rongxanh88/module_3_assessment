@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'items#index'
+  root 'best_buy#index'
 
   resources :items,  only: [:index, :show]
   resources :orders, only: [:index, :show]

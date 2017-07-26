@@ -7,5 +7,6 @@ RSpec.describe "Items API", :type => :request do
     delete "/api/v1/items/#{item.id}"
 
     expect(response).to have_http_status(204)
+    expect(Item.count).to eq(0)
   end
 end

@@ -13,5 +13,6 @@ RSpec.describe "Items API", :type => :request do
     expect(result[:image_url]).to eq(attributes[:image_url])
     expect(result[:created_at]).to be nil
     expect(result[:updated_at]).to be nil
+    expect(Item.count).to eq(1)
   end
 end

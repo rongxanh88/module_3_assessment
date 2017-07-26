@@ -1,0 +1,2 @@
+class BestBuyController < ApplicationController
+end
