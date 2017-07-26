@@ -14,7 +14,9 @@ class Api::V1::ItemsController <  ActionController::Base
   end
 
   def destroy
-
+    item = Item.find(params[:id])
+    item.destroy
+    render status: 204, json: {}
   end
 
   private
