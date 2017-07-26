@@ -2,14 +2,16 @@ require "rails_helper"
 
 RSpec.describe "Item API", :type => :request do
   it "returns a 200 response with a single items" do
-    skip
     item = create(:item)
 
-    get "/api/v1/item/#{item.id}"
+    get "/api/v1/items/#{item.id}"
 
-    result = JSON.parse(response.body)
-
+    result = JSON.parse(response.body, symbolize_names: true)
     expect(response).to have_http_status(200)
+    expect(result.last[:name]).to eq(item.name)
+    expect(result.last[:description]).to eq(item.description)
+    expect(result.last[:image_url]).to eq(item.image_url)
+    expect(result.last[:created_at]).to be nil
+    expect(result.last[:updated_at]).to be nil
   end
 end
-# I receive a 200 JSON response containing the id, name, description, and image_url but not the created_at or updated_at

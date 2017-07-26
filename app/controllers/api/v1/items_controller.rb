@@ -3,11 +3,10 @@ class Api::V1::ItemsController <  ActionController::Base
 
   def index
     @items = Item.all
-    render json: @items
   end
 
   def show
-
+    @item = Item.find(params[:id])
   end
 
   def create
