@@ -13,6 +13,7 @@ gem "therubyracer"
 gem "less-rails-bootstrap"
 gem 'figaro'
 gem 'faraday'
+gem 'active_model_serializers', '~> 0.10.0'
 
 group :development do
   gem "spring"
@@ -24,4 +25,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'vcr'
+  gem 'webmock'
 end
