@@ -5,9 +5,8 @@ class BestBuyController < ApplicationController
 
   def search
     # zip_code = params[:zip_code]
-    response = Faraday.get("https://api.bestbuy.com/v1/stores(area(80202,25))?format=json&show=storeId,storeType,name&pageSize=10&apiKey=tq72hpvtbbd4mue6f23kmsw2")
+    response = Faraday.get("https://api.bestbuy.com/v1/stores(area(80202,25))?format=json&show=longName,city,distance,phone,storeType&pageSize=10&apiKey=tq72hpvtbbd4mue6f23kmsw2")
     result = JSON.parse(response.body, symbolize_names: true)
-    @presenter = StorePresenter.new(result)
-    binding.pry
+    @presenter = StoresPresenter.new(result)
   end
 end
