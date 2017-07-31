@@ -1,12 +1,12 @@
 class BestBuyController < ApplicationController
   def home
-
   end
 
   def search
-    zip_code = params[:zip_code]
-    response = BestBuyService.get_stores(zip_code)
+    response = BestBuyService.get_stores(params[:zip_code])
     result = JSON.parse(response.body, symbolize_names: true)
-    @presenter = StoresPresenter.new(result)
+    @stores = result[:stores].map {|store| Store.new(store)}
+    # binding.pry
+    # "hello"
   end
 end

@@ -1,7 +1,7 @@
 %p 
-  = "#{@presenter.total_stores} Total Stores"
+  = "#{@stores.count} Total Stores"
 
-- @presenter.stores.each do |store|
+- @stores.each do |store|
   %p 
     = "Long Name: #{store.long_name}"
   %p 
