@@ -5,7 +5,8 @@ class BestBuyController < ApplicationController
   end
 
   def search
-    @stores = BestBuyService.get_stores(params[:zip_code])
+    service = BestBuyService.new
+    @stores = service.get_stores(params[:zip_code])
                             .paginate(:page => params[:page], :per_page => 10)
   end
 end
