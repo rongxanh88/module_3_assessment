@@ -12,3 +12,5 @@
     = "Phone Number: #{store.phone}"
   %p 
     = "Store Type: #{store.store_type}"
+
+= will_paginate @stores, :container => false
